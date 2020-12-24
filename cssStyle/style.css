@@ -1,4 +1,6 @@
+
 body{
+    hight: 100%;
     width: 100%;
     background-color: darkred;
     padding: 0;
@@ -180,6 +182,7 @@ menuA:hover {
     text-align: center;
     margin-top: 7px;
     vertical-align: top;
+    cursor: pointer;
 }
 
 
@@ -346,16 +349,20 @@ menuA:hover {
 /* Футер і його наповнення */
 footer{
     display: flex;
-    position: absolute;
+    justify-content: space-between;
     bottom: 0;
-    flex-direction: row;
     width: 100%;
     height: max-content;
     background-color: #081e24;
     padding: 10px;
-    color: #72bf9e;
+    color: white;
     font-family: Bahnschrift, monospace;
 }
+
+.footerDiv {
+    margin-right: 20px;
+}
+
 .textfoot{
     flex:1;
     display: inline;
@@ -462,11 +469,9 @@ footer{
     overflow-wrap: break-word;
     font-family: Bahnschrift, monospace;
     font-style: italic;
-    background-color: darkred;
     padding:10px;
     color: white;
     border-radius: 1vh;
-    transform: skew(10deg, 0deg);
 }
 /*Order page*/
 .unorder{
@@ -536,8 +541,6 @@ footer{
     overflow: hidden;
     font-size: inherit;
     outline: none;
-    border:none;
-    border-radius: 0.4vh;
     font-family:Bahnschrift, monospace;
     background-color: white;
 }

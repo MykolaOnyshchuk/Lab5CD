@@ -6,15 +6,14 @@ const upMenu=document.getElementsByClassName('upperMenu')[0];
 let db1;
 let order=[];
 let localStr=window.localStorage;
-let orderCase=['+38 0** *** ** **','','Українською мовою','Київ, вул.МОЯ 2ф, кв.432',
-    '"Cьогодні" або ДД.ММ.РРРР','Готівка чи карта. Лише передплата.']
+let orderCase=['','','','','','']
 
 onReady(function() {
     document.getElementById('loading').style.display='none'
     document.getElementsByClassName('container')[0].style.display='block'
     document.getElementsByClassName('footer')[0].style.display='flex'
 });
-class screenRender{
+class screenCreate{
     constructor(container, db, siteUrl){
         this.container = container;
         this.db=db;
@@ -64,7 +63,7 @@ class Order{
     }
 }
 
-let scRender = new screenRender(null, null,"");
+let scRender = new screenCreate(null, null,"");
 
 window.addEventListener('click', (event)=>{
     let curentClassName = event.target.className
@@ -74,7 +73,6 @@ window.addEventListener('click', (event)=>{
         case 'oneOpt':{ window.location.hash = '#catalog/'+event.target.id; break;}
         case 'shopCounter':{ if (loc !== '#basketPage' && event.target.id !== '') window.location.hash = '#basketPage';  break;}
         case 'shopBasket':{ if (loc !== '#basketPage' && event.target.id !== '') window.location.hash = '#basketPage';  break;}
-        case 'priceAll':{ if (loc !== '#basketPage' && event.target.id !== '') window.location.hash = '#basketPage';  break;}
         case 'productName':{ window.location.hash ='#oneProductPage/'+ event.target.id; break;}
         case 'action':{ window.location.hash ='#oneAction/'+ event.target.id; break;}
         case 'IMG':{  window.location.hash ='#oneProductPage/'+ event.target.id; break;}
@@ -158,7 +156,7 @@ async function pushOrder() {
     baner.style.display='block'
     baner.style.top='calc(50vh - 10vh + '+ window.scrollY +'px)'
     window.requestAnimationFrame(banerstep);
-    setTimeout(function del3(){ baner.style.display='none'; baner.innerHTML="Додано"}, 1000);
+    setTimeout(function del3(){ baner.style.display='none'; baner.innerHTML="Товар додано в корзину"}, 1000);
 }
 
 window.onmouseover = function (event) {
@@ -245,7 +243,6 @@ function deleteFromOrder(target){
 }
 
 function refreshCounter(){
-    let totalPrice = document.getElementById("priceAll");
     let counterProduct = document.getElementById("shopCounter");
     let shopBasket = document.getElementsByClassName("shopBasket");
     if (shopBasket.length>1){shopBasket=shopBasket[1].firstChild}
@@ -254,8 +251,6 @@ function refreshCounter(){
         counter+=order[q+1];
         price+=findPrice(order[q])*order[q+1];
     }
-    totalPrice.innerHTML=price.toFixed(2);
-    if (shopBasket.id === 'priceAll')shopBasket.innerHTML='Загальна вартість замовлення: '+price.toFixed(2)+'грн.';
     counterProduct.innerHTML=counter;
 };
 
@@ -284,7 +279,7 @@ window.onload = async function (){
     if (screen.length > 0) screen[0].remove();
     let container = insertElementInPlace('div', 'container', upMenu, 'afterend');
     document.getElementsByClassName('container')[0].style.display='none';
-    scRender = new screenRender(container, db1, window.location.hash.split("/"));
+    scRender = new screenCreate(container, db1, window.location.hash.split("/"));
     let catOpt=document.getElementsByClassName("catOpt")[0];
     for(let w=0;w<scRender.db.category.length;w++){
         let textDiv=insertElement('div', 'oneOpt', catOpt);

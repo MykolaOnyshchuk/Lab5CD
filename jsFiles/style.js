@@ -16,7 +16,7 @@ function indexFull(container, db){
     }
     insertElement('div', '', whatAction);
     let categoryHit=insertElement('h1', 'categoryHit', container);
-    categoryHit.innerHTML="Хіти продажу";
+    categoryHit.innerHTML="Гаряча пропозиція";
     let recomendHit=insertElement('div', 'recomendHit', container);
     for (let q=0; q<db.products.length; q++){
         if (db.products[q].isHit){
@@ -207,9 +207,6 @@ function orderFull(container){
         insertElement('textarea', 'functionInput', area).id=i+'text';
     }
     let shopBasket=insertElement('div', 'shopBasket', container);
-    let priceAll=insertElement('p', 'priceAll', shopBasket);
-    let price = document.getElementById("priceAll").innerHTML;
-    priceAll.innerHTML='Загальна вартість: '+price+'грн';
     let PutOrder = insertElementDetails('input', 'PutOrder', 'button', container)
     PutOrder.value = "Оформити замовлення";
 }
@@ -219,9 +216,6 @@ function basketFull(container, db, order){
     let bayAll=insertElement('div', 'bayAll', container);
     insertElement('h2', 'conected', bayAll).innerHTML='Кошик';
     let shopBasket=insertElement('div', 'shopBasket', bayAll);
-    let priceAll=insertElement('p', '', shopBasket);
-    priceAll.id='priceAll';
-    priceAll.innerHTML='Загальна вартість: '+0+'грн';
     let productList = insertElement('div', 'productList', bayAll);
     for (let i=0; i<order.length; i+=2){
         let myProd = db.products[order[i]];
