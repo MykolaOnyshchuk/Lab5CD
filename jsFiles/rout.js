@@ -32,7 +32,7 @@ class screanRender{
             else catalogFull(this.container, this.db);
                 break;
             }
-            case '#oneAction':{if (this.hashId>=0 && this.hashId<this.db.Action.length)
+            case '#oneAction':{if (this.hashId>=0 && this.hashId < this.db.Action.length)
                 actionOneFull(this.container, this.db, this.hashId);
             else  window.location.hash = ''
                 break;
