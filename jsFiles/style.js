@@ -21,7 +21,7 @@ function indexFull(container, db){
     for (let q=0; q<db.products.length; q++){
         if (db.products[q].isHit){
             let oneProduct=incertElement('div', 'oneProduct', recomendHit);
-            incertImg('img','', db.products[q].images[0],oneProduct).id=db.products[q].id;
+            incertImg('img','', db.products[q].img,oneProduct).id=db.products[q].id;
             let textDiv=incertElement('div', '', oneProduct);
             let productName = incertElement('p', 'productName', textDiv)
             productName.innerHTML=db.products[q].productName;
@@ -46,7 +46,7 @@ function catalogFull(container, db){
         for (let q=0; q<db.products.length; q++){
             if (db.products[q].categoryId === db.category[i].id){
                 let oneProduct=incertElement('div', 'oneProduct', productList);
-                incertImg('img','', db.products[q].images[0],oneProduct).id=db.products[q].id;
+                incertImg('img','', db.products[q].img,oneProduct).id=db.products[q].id;
                 let textDiv=incertElement('div', '', oneProduct);
                 let productName=incertElement('p', 'productName', textDiv)
                 productName.innerHTML=db.products[q].productName;
@@ -72,7 +72,7 @@ function catalogOneFull(container, db, hashId){
     for (let q=0; q<db.products.length; q++){
         if (db.products[q].categoryId === db.category[hashId].id){
             let oneProduct=incertElement('div', 'oneProduct', productList);
-            incertImg('img','', db.products[q].images[0],oneProduct).id=db.products[q].id;
+            incertImg('img','', db.products[q].img,oneProduct).id=db.products[q].id;
             let textDiv=incertElement('div', '', oneProduct);
             let productName=incertElement('p', 'productName', textDiv)
             productName.innerHTML=db.products[q].productName;
@@ -100,9 +100,7 @@ function actionOneFull(container, db, hashId){
 function oneProductFull(container, db, hashId){
     let aboutProduct = incertElement('div', 'aboutProduct', container);
     let allProdImg = incertElement('div', 'allProdImg', aboutProduct);
-    for (let i=0;i<db.products[hashId].images.length; i++){
-        incertImg('img', 'productImg', db.products[hashId].images[i],allProdImg).id=db.products[hashId].id;
-    }
+    incertImg('img', 'productImg', db.products[hashId].img,allProdImg).id=db.products[hashId].id;
     //incertElementDetails('input', 'productImgHelp', 'textarea', allProdImg)
     incertElement('p', 'oneProductName', aboutProduct).innerHTML=db.products[hashId].productName;
     let onePrice = incertElement('p', 'price', aboutProduct);
@@ -125,7 +123,7 @@ function oneProductFull(container, db, hashId){
         let prodId=myProduct.connectedProductIds[i];
         let conectProd = db.products[prodId];
         let oneProduct=incertElement('div', 'oneProduct', productList);
-        incertImg('img','', conectProd.images[0],oneProduct).id=conectProd.id;
+        incertImg('img','', conectProd.img,oneProduct).id=conectProd.id;
         let textDiv=incertElement('div', '', oneProduct);
         let productName=incertElement('p', 'productName', textDiv);
         productName.innerHTML=conectProd.productName;
@@ -228,7 +226,7 @@ function basketFull(container, db, order){
     for (let i=0; i<order.length; i+=2){
         let myProd = db.products[order[i]];
         let oneProduct=incertElement('div', 'oneProduct', productList);
-        incertImg('img','', myProd.images[0],oneProduct).id=myProd.id;
+        incertImg('img','', myProd.img,oneProduct).id=myProd.id;
         incertElement('p', 'counterOrdered', oneProduct).innerHTML=order[i+1];
         let textDiv=incertElement('div', '', oneProduct);
         let productName = incertElement('p', 'productName', textDiv)

@@ -10,44 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24f34856-f109-4d14-ab02-84c1ff92f91c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/img/BBQ.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/ChocoRoll.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/Karri_Ananas.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/Pizzione_logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/black_maffin.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/bonaqua_г.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/bonaqua_нг.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/coca-cola.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/coca-cola_zero.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/coca-cola_zero_orange.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/fanta_orange.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/fuzetea_зелений_чай_манго.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/fuzetea_чорний_чай_лимон.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/schweppes.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/schweppes_mojito.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/schweppes_tonic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/sprite.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/white_maffin.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/Баварская.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/Байтсы_с_корицей.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/Гавайська.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/Кантри.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/Карбонара.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/Маргарита.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/Папарацци.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/Пепперони_Блюз.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/Пепперони_и_томаты.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/Техас.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/Тони_Пепперони.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/лава_кейк.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/овочэва_фэерия.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cssStyle/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/cssStyle/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jsFiles/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/jsFiles/style.js" afterDir="false" />
-    </list>
+    <list default="true" id="24f34856-f109-4d14-ab02-84c1ff92f91c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,7 +59,7 @@
       <workItem from="1608673847794" duration="2353000" />
       <workItem from="1608712436015" duration="47000" />
       <workItem from="1608735186770" duration="46000" />
-      <workItem from="1608736048989" duration="18761000" />
+      <workItem from="1608736048989" duration="19179000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <created>1608678310736</created>
@@ -210,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608792100927</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Add pizza">
+      <created>1608800892137</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1608800892137</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,16 +207,17 @@
     <MESSAGE value="Test" />
     <MESSAGE value="Add action images" />
     <MESSAGE value="Fix bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix bugs" />
+    <MESSAGE value="Add pizza" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add pizza" />
   </component>
   <component name="WindowStateProjectService">
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1608794058170">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1608794058170" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1608792106594">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1608800896611">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1608792106594" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1608800896611" />
   </component>
 </project>
