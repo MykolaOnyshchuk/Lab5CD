@@ -286,7 +286,9 @@ menuA:hover {
     margin: 1vh;
     /*height: 26vh;*/
     min-height: 11vw;
-    width: 96%;
+    max-height: 40vh;
+    width: auto;
+    max-width: 96%;
     /*width: 55%;*/
     /*flex:0.8;*/
     display: inline;
