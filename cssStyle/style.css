@@ -194,7 +194,7 @@ dee3e9 - сірий білий
     border-radius: 2vmax;
     background-color: #e29467;
     text-align: center;
-    background-image: url("/img/shopping-cart.png");
+    background-image: url('/img/shopping-cart.png');
     background-size: 2vh 2vh;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -642,4 +642,9 @@ footer{
     .shopBasket{
         min-width: max-content;
     }
+}
+
+.logoImg {
+    height: 37px;
+    width: auto;
 }

@@ -26,7 +26,7 @@ function indexFull(container, db){
             let productName = incertElement('p', 'productName', textDiv)
             productName.innerHTML=db.products[q].productName;
             productName.id=db.products[q].id;
-            incertElement('p', 'productComponents', textDiv).innerHTML=db.products[q].productComponents;
+            incertElement('p', 'productComponents', textDiv).innerHTML=db.products[q].components;
             incertElement('p', 'price', textDiv).innerHTML=db.products[q].price+' грн';
             let acBtn = incertElementDetails('input', 'order', 'button', oneProduct)
             acBtn.value = 'До корзини';
@@ -51,7 +51,7 @@ function catalogFull(container, db){
                 let productName=incertElement('p', 'productName', textDiv)
                 productName.innerHTML=db.products[q].productName;
                 productName.id=db.products[q].id;
-                incertElement('p', 'productComponents', textDiv).innerHTML=db.products[q].productComponents;
+                incertElement('p', 'productComponents', textDiv).innerHTML=db.products[q].components;
                 incertElement('p', 'price', textDiv).innerHTML=db.products[q].price+' грн';
                 let acBtn = incertElementDetails('input', 'order', 'button', oneProduct)
                 acBtn.value = 'До корзини';
@@ -77,7 +77,7 @@ function catalogOneFull(container, db, hashId){
             let productName=incertElement('p', 'productName', textDiv)
             productName.innerHTML=db.products[q].productName;
             productName.id=db.products[q].id;
-            incertElement('p', 'productComponents', textDiv).innerHTML=db.products[q].productComponents;
+            incertElement('p', 'productComponents', textDiv).innerHTML=db.products[q].components;
             incertElement('p', 'price', textDiv).innerHTML=db.products[q].price+' грн';
             let acBtn = incertElementDetails('input', 'order', 'button', oneProduct)
             acBtn.value = 'До корзини';
@@ -114,15 +114,15 @@ function oneProductFull(container, db, hashId){
     acBtn.style.top='12vmax';
     acBtn.style.left='33vmax';
     acBtn.style.backgroundColor='#dee3e9';
-    incertElement('p', 'oneProductDescription', aboutProduct).innerHTML=db.products[hashId].productComponents;
+    incertElement('p', 'oneProductDescription', aboutProduct).innerHTML=db.products[hashId].components;
     incertElement('p', 'oneProductPromo', aboutProduct).innerHTML=db.products[hashId].productDesk;
 
     let conectedAll = incertElement('div', 'conectedAll', container);
     incertElement('h2', 'conected', conectedAll).innerHTML="Зв'язані продукти";
     let myProduct=db.products[hashId];
     let productList = incertElement('div', 'productList', conectedAll);
-    for (let i=0; i<myProduct.conectedProductIds.length; i++){
-        let prodId=myProduct.conectedProductIds[i];
+    for (let i=0; i<myProduct.connectedProductIds.length; i++){
+        let prodId=myProduct.connectedProductIds[i];
         let conectProd = db.products[prodId];
         let oneProduct=incertElement('div', 'oneProduct', productList);
         incertImg('img','', conectProd.images[0],oneProduct).id=conectProd.id;
@@ -130,7 +130,7 @@ function oneProductFull(container, db, hashId){
         let productName=incertElement('p', 'productName', textDiv);
         productName.innerHTML=conectProd.productName;
         productName.id=conectProd.id;
-        incertElement('p', 'productComponents', textDiv).innerHTML=conectProd.productComponents;
+        incertElement('p', 'productComponents', textDiv).innerHTML=conectProd.components;
         incertElement('p', 'price', textDiv).innerHTML=conectProd.price+' грн';
         let acBtn = incertElementDetails('input', 'order', 'button', oneProduct)
         acBtn.value = 'До корзини';
@@ -139,9 +139,9 @@ function oneProductFull(container, db, hashId){
 
 let start = null;
 function banerstep(currentTime) {
-    if (!start) start =currentTime;
-    var process=currentTime-start;
-    let element=document.getElementById('resultBaner');
+    if (!start) start = currentTime;
+    var process = currentTime-start;
+    let element = document.getElementById('resultBaner');
     if(process > 500){element.style.opacity = (100 - (process-500)/5)+'%';}
     else{element.style.opacity = ((process)/5)+'%';}
     if (process < 1000) {
@@ -234,7 +234,7 @@ function basketFull(container, db, order){
         let productName = incertElement('p', 'productName', textDiv)
         productName.innerHTML=myProd.productName;
         productName.id=myProd.id;
-        incertElement('p', 'productComponents', textDiv).innerHTML=myProd.productComponents;
+        incertElement('p', 'productComponents', textDiv).innerHTML=myProd.components;
         incertElement('p', 'price', textDiv).innerHTML=myProd.price+' грн';
         let acBtn = incertElementDetails('input', 'order', 'button', oneProduct)
         acBtn.value = 'Додати ще одиницю';
