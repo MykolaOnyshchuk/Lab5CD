@@ -311,9 +311,12 @@ menuA:hover {
     font-size: 1.3vw;
     overflow-wrap: break-word;
     font-family: Bahnschrift, monospace;
+    margin-bottom: 100px;
 }
 .price{
     width: 100%;
+    position: absolute;
+    bottom: 45px;
     font-size: 2vw;
     text-align: center;
     color: grey;
