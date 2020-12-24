@@ -294,7 +294,6 @@ menuA:hover {
 .oneProduct > div {
     display: inline;
     padding: 1vh;
-    max-width: 35%;
     background-color: #dee3e900;
 }
 .productName{
@@ -302,10 +301,10 @@ menuA:hover {
     font-size: 2vw;
     overflow-wrap: break-word;
     font-family: Bahnschrift, monospace;
+    cursor: pointer;
 }
 .productName:hover{
-    color:#081e24;
-    text-shadow: 3px 3px 3px  #081e24;
+    text-decoration: underline;
 }
 .productComponents{
     width: 100%;
