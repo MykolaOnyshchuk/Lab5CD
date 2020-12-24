@@ -1,6 +1,6 @@
 import {fetchMyData,postOrder} from './main.js'
-import {indexFull, catalogFull,catalogOneFull,actionOneFull,oneProductFull,basketFull, incertElementInPlace,
-    incertElement,onReady,banerstep,orderFull, moveImg} from './style.js'
+import {indexFull, catalogFull,catalogOneFull,actionOneFull,oneProductFull,basketFull, insertElementInPlace,
+    insertElement,onReady,banerstep,orderFull, moveImg} from './style.js'
 const body=document.getElementById('body');
 const upMenu=document.getElementsByClassName('upperMenu')[0];
 let db1;
@@ -14,7 +14,7 @@ onReady(function() {
     document.getElementsByClassName('container')[0].style.display='block'
     document.getElementsByClassName('footer')[0].style.display='flex'
 });
-class screanRender{
+class screenRender{
     constructor(container, db, siteUrl){
         this.container = container;
         this.db=db;
@@ -67,7 +67,7 @@ class Order{
     }
 }
 
-let scRender = new screanRender(null, null,"");
+let scRender = new screenRender(null, null,"");
 
 window.addEventListener('click', (event)=>{
     let curentClassName = event.target.className
@@ -117,17 +117,47 @@ function validation(textArea){
     let name=/^\W{1,}$/;
     let date=/^\d{2}.\d{2}.\d{4}$/;
     let variant=["готівка","Готівка","Карта","карта"];
-    if (!phoneNumber.test(textArea[0].value)){alert("Некоректний номер телефону");isValid=false;textArea[0].style.color="#e29467"}
-    if (!mail.test(textArea[1].value) && textArea[1].value !== ''){alert("некоректний мейл");isValid=false;textArea[1].style.color="#e29467"}
-    if (!name.test(textArea[2].value) && textArea[2].value !== ''){alert("Щось не так з ім'ям");isValid=false;textArea[2].style.color="#e29467"}
-    if (!address.test(textArea[3].value)){alert("Адрес помилковий");isValid=false;textArea[3].style.color="#e29467"}
-    if (!((date.test(textArea[4].value) && isDate(textArea[4].value)) || textArea[4].value === 'Сьогодні' || textArea[4].value === 'cьогодні' )){alert("Хибна дата");isValid=false;textArea[4].style.color="#e29467"}
-    if (!variant.includes(textArea[5].value)){alert("Така оплата неможлива");isValid=false;textArea[5].style.color="#e29467"}
+    if (!phoneNumber.test(textArea[0].value))
+    {
+        alert("Некоректно введений номер телефону");
+        isValid=false;textArea[0].style.color="#e29467";
+    }
+    if (!mail.test(textArea[1].value) && textArea[1].value !== '')
+    {
+        alert("Некоректно введений email");
+        isValid=false;
+        textArea[1].style.color="#e29467";
+    }
+    if (!name.test(textArea[2].value) && textArea[2].value !== '')
+    {
+        alert("Некоректно введене ім'я");
+        isValid=false;
+        textArea[2].style.color="#e29467";
+    }
+    if (!address.test(textArea[3].value)){
+        alert("Некоректно введена адреса");
+        isValid=false;
+        textArea[3].style.color="#e29467";
+    }
+    if (!((date.test(textArea[4].value) && isDate(textArea[4].value)) || textArea[4].value === 'Сьогодні' || textArea[4].value === 'cьогодні' ))
+    {alert("Некоректно введена дата");
+    isValid=false;
+    textArea[4].style.color="#e29467";
+    }
+    if (!variant.includes(textArea[5].value))
+    {
+        alert("Оплата неможлива");
+        isValid=false;
+        textArea[5].style.color="#e29467"
+    }
     for(let q=0;q<textArea.length;q++) {
         textArea[q].oninput=function () {
-            textArea[q].style.color="#000000"
+            textArea[q].style.color="#000000";
         }
-        if(textArea[q].value === '')textArea[q].style.color="#000000"
+        if(textArea[q].value === '')
+        {
+            textArea[q].style.color="#000000";
+        }
     }
     return isValid;
 }
@@ -141,13 +171,13 @@ async function pushOrder() {
         let yourOrder = await postOrder(oneOrder)
         console.log(yourOrder)
         baner.innerHTML="Order #"+yourOrder.id;
-        localStr.setItem("orders",  JSON.stringify([]))
+        localStr.setItem("orders", JSON.stringify([]))
         order=[];
         refreshCounter();
     }
     else{baner.innerHTML="Помилка замовлення"}
     baner.style.display='block'
-    baner.style.top='calc(50vh - 10vmin + '+ window.scrollY +'px)'
+    baner.style.top='calc(50vh - 10vh + '+ window.scrollY +'px)'
     window.requestAnimationFrame(banerstep);
     setTimeout(function del3(){ baner.style.display='none'; baner.innerHTML="Додано"}, 1000);
 }
@@ -163,6 +193,7 @@ window.onmouseover = function (event) {
         case 'ПІБ':{retouchText(event.target, orderCase[2], textArea);break;}
         case 'Адреса *':{retouchText(event.target, orderCase[3], textArea);break;}
         case 'Дата доставки *':{retouchText(event.target, orderCase[4], textArea);break;}
+        case 'Варіант оплати':{retouchText(event.target, orderCase[5], textArea);break;}
         case 'Варіант оплати':{retouchText(event.target, orderCase[5], textArea);break;}
         default: {break;}
     }
@@ -188,7 +219,7 @@ function addToOrder(target){
                 target.parentElement.childNodes[1].innerHTML=order[i+1];
             localStr.setItem("orders", JSON.stringify( order));
             baner.style.display='block'
-            baner.style.top='calc(50vh - 10vmin + '+ window.scrollY +'px)'
+            baner.style.top='calc(50vh - 10vh + '+ window.scrollY +'px)'
             window.requestAnimationFrame(banerstep);
             setTimeout(function del2(){baner.style.display='none'}, 1000);
             refreshCounter();
@@ -198,7 +229,7 @@ function addToOrder(target){
     order.push(id);
     order.push(1);
     baner.style.display='block'
-    baner.style.top='calc(50vh - 10vmin + '+ window.scrollY +'px)'
+    baner.style.top='calc(50vh - 10vh + '+ window.scrollY +'px)'
     window.requestAnimationFrame(banerstep);
     setTimeout(function del2(){baner.style.display='none'}, 1000);
     localStr.setItem("orders",  JSON.stringify( order));
@@ -270,14 +301,14 @@ window.onload = async function (){
         order=JSON.parse(orderTmp);
     }
 
-    let screan = document.getElementsByClassName('container');
-    if (screan.length > 0) screan[0].remove();
-    let container = incertElementInPlace('div', 'container', upMenu, 'afterend');
+    let screen = document.getElementsByClassName('container');
+    if (screen.length > 0) screen[0].remove();
+    let container = insertElementInPlace('div', 'container', upMenu, 'afterend');
     document.getElementsByClassName('container')[0].style.display='none';
-    scRender = new screanRender(container, db1, window.location.hash.split("/"));
+    scRender = new screenRender(container, db1, window.location.hash.split("/"));
     let catOpt=document.getElementsByClassName("catOpt")[0];
     for(let w=0;w<scRender.db.category.length;w++){
-        let textDiv=incertElement('div', 'oneOpt', catOpt);
+        let textDiv=insertElement('div', 'oneOpt', catOpt);
         textDiv.innerHTML=scRender.db.category[w].name;
         textDiv.id=scRender.db.category[w].id;
     }

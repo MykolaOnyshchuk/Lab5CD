@@ -1,34 +1,34 @@
 function indexFull(container, db){
-    let actionSlide = incertElement('div', 'actionSlide', container);
-    let allAction = incertElement('div', 'allAction', actionSlide);
+    let actionSlide = insertElement('div', 'actionSlide', container);
+    let allAction = insertElement('div', 'allAction', actionSlide);
     for (let i=0; i<db.Action.length; i++){
-        let oneAction = incertElement('div', 'oneAction', allAction);
-        incertImg('img', 'actImg', db.Action[i].image,oneAction);
-        let acBtn = incertElementDetails('input', 'action', 'button', oneAction)
+        let oneAction = insertElement('div', 'oneAction', allAction);
+        insertImg('img', 'actImg', db.Action[i].image,oneAction);
+        let acBtn = insertElementDetails('input', 'action', 'button', oneAction)
         acBtn.value = 'Детальніше';
         acBtn.id=db.Action[i].id;
     }
-    let whatAction = incertElement('div', 'whatAction', actionSlide);
+    let whatAction = insertElement('div', 'whatAction', actionSlide);
     whatAction.style.gridTemplateColumns=' 7fr repeat('+db.Action.length+',1fr) 7fr';
-    incertElement('div', '', whatAction);
+    insertElement('div', '', whatAction);
     for (let q=0; q<db.Action.length; q++){
-        incertElement('div', 'number', whatAction);
+        insertElement('div', 'number', whatAction);
     }
-    incertElement('div', '', whatAction);
-    let categoryHit=incertElement('h1', 'categoryHit', container);
+    insertElement('div', '', whatAction);
+    let categoryHit=insertElement('h1', 'categoryHit', container);
     categoryHit.innerHTML="Хіти продажу";
-    let recomendHit=incertElement('div', 'recomendHit', container);
+    let recomendHit=insertElement('div', 'recomendHit', container);
     for (let q=0; q<db.products.length; q++){
         if (db.products[q].isHit){
-            let oneProduct=incertElement('div', 'oneProduct', recomendHit);
-            incertImg('img','', db.products[q].img,oneProduct).id=db.products[q].id;
-            let textDiv=incertElement('div', '', oneProduct);
-            let productName = incertElement('p', 'productName', textDiv)
+            let oneProduct=insertElement('div', 'oneProduct', recomendHit);
+            insertImg('img','', db.products[q].img,oneProduct).id=db.products[q].id;
+            let textDiv=insertElement('div', '', oneProduct);
+            let productName = insertElement('p', 'productName', textDiv)
             productName.innerHTML=db.products[q].productName;
             productName.id=db.products[q].id;
-            incertElement('p', 'productComponents', textDiv).innerHTML=db.products[q].components;
-            incertElement('p', 'price', textDiv).innerHTML=db.products[q].price+' грн';
-            let acBtn = incertElementDetails('input', 'order', 'button', oneProduct)
+            insertElement('p', 'productComponents', textDiv).innerHTML=db.products[q].components;
+            insertElement('p', 'price', textDiv).innerHTML=db.products[q].price+' грн';
+            let acBtn = insertElementDetails('input', 'order', 'button', oneProduct)
             acBtn.value = 'До корзини';
         }
     }
@@ -38,22 +38,22 @@ function indexFull(container, db){
 }
 
 function catalogFull(container, db){
-    let catalog = incertElement('div', 'catalog', container);
+    let catalog = insertElement('div', 'catalog', container);
     for (let i=0; i<db.category.length; i++){
-        let ctegoryName = incertElement('h2', 'ctegoryName', catalog);
+        let ctegoryName = insertElement('h2', 'ctegoryName', catalog);
         ctegoryName.innerHTML=db.category[i].name;
-        let productList = incertElement('div', 'productList', catalog);
+        let productList = insertElement('div', 'productList', catalog);
         for (let q=0; q<db.products.length; q++){
             if (db.products[q].categoryId === db.category[i].id){
-                let oneProduct=incertElement('div', 'oneProduct', productList);
-                incertImg('img','', db.products[q].img,oneProduct).id=db.products[q].id;
-                let textDiv=incertElement('div', '', oneProduct);
-                let productName=incertElement('p', 'productName', textDiv)
+                let oneProduct=insertElement('div', 'oneProduct', productList);
+                insertImg('img','', db.products[q].img,oneProduct).id=db.products[q].id;
+                let textDiv=insertElement('div', '', oneProduct);
+                let productName=insertElement('p', 'productName', textDiv)
                 productName.innerHTML=db.products[q].productName;
                 productName.id=db.products[q].id;
-                incertElement('p', 'productComponents', textDiv).innerHTML=db.products[q].components;
-                incertElement('p', 'price', textDiv).innerHTML=db.products[q].price+' грн';
-                let acBtn = incertElementDetails('input', 'order', 'button', oneProduct)
+                insertElement('p', 'productComponents', textDiv).innerHTML=db.products[q].components;
+                insertElement('p', 'price', textDiv).innerHTML=db.products[q].price+' грн';
+                let acBtn = insertElementDetails('input', 'order', 'button', oneProduct)
                 acBtn.value = 'До корзини';
             }
         }
@@ -65,21 +65,21 @@ function catalogFull(container, db){
 }
 
 function catalogOneFull(container, db, hashId){
-    let catalog = incertElement('div', 'catalog', container);
-    let ctegoryName = incertElement('h2', 'ctegoryName', catalog);
+    let catalog = insertElement('div', 'catalog', container);
+    let ctegoryName = insertElement('h2', 'ctegoryName', catalog);
     ctegoryName.innerHTML=db.category[hashId].name;
-    let productList = incertElement('div', 'productList', catalog);
+    let productList = insertElement('div', 'productList', catalog);
     for (let q=0; q<db.products.length; q++){
         if (db.products[q].categoryId === db.category[hashId].id){
-            let oneProduct=incertElement('div', 'oneProduct', productList);
-            incertImg('img','', db.products[q].img,oneProduct).id=db.products[q].id;
-            let textDiv=incertElement('div', '', oneProduct);
-            let productName=incertElement('p', 'productName', textDiv)
+            let oneProduct=insertElement('div', 'oneProduct', productList);
+            insertImg('img','', db.products[q].img,oneProduct).id=db.products[q].id;
+            let textDiv=insertElement('div', '', oneProduct);
+            let productName=insertElement('p', 'productName', textDiv)
             productName.innerHTML=db.products[q].productName;
             productName.id=db.products[q].id;
-            incertElement('p', 'productComponents', textDiv).innerHTML=db.products[q].components;
-            incertElement('p', 'price', textDiv).innerHTML=db.products[q].price+' грн';
-            let acBtn = incertElementDetails('input', 'order', 'button', oneProduct)
+            insertElement('p', 'productComponents', textDiv).innerHTML=db.products[q].components;
+            insertElement('p', 'price', textDiv).innerHTML=db.products[q].price+' грн';
+            let acBtn = insertElementDetails('input', 'order', 'button', oneProduct)
             acBtn.value = 'До корзини';
         }
     }
@@ -90,47 +90,47 @@ function catalogOneFull(container, db, hashId){
 }
 
 function actionOneFull(container, db, hashId){
-    let aboutAct = incertElement('div', 'aboutAct', container);
-    incertElement('p', 'oneActionName', aboutAct).innerHTML=db.Action[hashId].name;
-    incertElement('p', 'actionTime', aboutAct).innerHTML='Опубліковано: '+db.Action[hashId].datePosted;
-    incertImg('img', 'oneACtionImg', db.Action[hashId].image,aboutAct);
-    incertElement('p', 'oneActionDescription', aboutAct).innerHTML=db.Action[hashId].about;
+    let aboutAct = insertElement('div', 'aboutAct', container);
+    insertElement('p', 'oneActionName', aboutAct).innerHTML=db.Action[hashId].name;
+    insertElement('p', 'actionTime', aboutAct).innerHTML='Опубліковано: '+db.Action[hashId].datePosted;
+    insertImg('img', 'oneACtionImg', db.Action[hashId].image,aboutAct);
+    insertElement('p', 'oneActionDescription', aboutAct).innerHTML=db.Action[hashId].about;
 }
 
 function oneProductFull(container, db, hashId){
-    let aboutProduct = incertElement('div', 'aboutProduct', container);
-    let allProdImg = incertElement('div', 'allProdImg', aboutProduct);
-    incertImg('img', 'productImg', db.products[hashId].img,allProdImg).id=db.products[hashId].id;
-    //incertElementDetails('input', 'productImgHelp', 'textarea', allProdImg)
-    incertElement('p', 'oneProductName', aboutProduct).innerHTML=db.products[hashId].productName;
-    let onePrice = incertElement('p', 'price', aboutProduct);
+    let aboutProduct = insertElement('div', 'aboutProduct', container);
+    let allProdImg = insertElement('div', 'allProdImg', aboutProduct);
+    insertImg('img', 'productImg', db.products[hashId].img,allProdImg).id=db.products[hashId].id;
+    //insertElementDetails('input', 'productImgHelp', 'textarea', allProdImg)
+    insertElement('p', 'oneProductName', aboutProduct).innerHTML=db.products[hashId].productName;
+    let onePrice = insertElement('p', 'price', aboutProduct);
     onePrice.innerHTML='ціна: '+db.products[hashId].price+' грн';
     onePrice.style.fontSize='2.5vmax';
     onePrice.style.color='#72bf9e'
-    let acBtn = incertElementDetails('input', 'order', 'button', allProdImg)
+    let acBtn = insertElementDetails('input', 'order', 'button', allProdImg)
     acBtn.value = 'До корзини';
     acBtn.style.top='12vmax';
     acBtn.style.left='33vmax';
     acBtn.style.backgroundColor='#dee3e9';
-    incertElement('p', 'oneProductDescription', aboutProduct).innerHTML=db.products[hashId].components;
-    incertElement('p', 'oneProductPromo', aboutProduct).innerHTML=db.products[hashId].productDesk;
+    insertElement('p', 'oneProductDescription', aboutProduct).innerHTML=db.products[hashId].components;
+    insertElement('p', 'oneProductPromo', aboutProduct).innerHTML=db.products[hashId].productDesk;
 
-    let conectedAll = incertElement('div', 'conectedAll', container);
-    incertElement('h2', 'conected', conectedAll).innerHTML="Зв'язані продукти";
+    let conectedAll = insertElement('div', 'conectedAll', container);
+    insertElement('h2', 'conected', conectedAll).innerHTML="Зв'язані продукти";
     let myProduct=db.products[hashId];
-    let productList = incertElement('div', 'productList', conectedAll);
-    for (let i=0; i<myProduct.connectedProductIds.length; i++){
-        let prodId=myProduct.connectedProductIds[i];
+    let productList = insertElement('div', 'productList', conectedAll);
+    for (let i=0; i<myProduct.similar.length; i++){
+        let prodId=myProduct.similar[i];
         let conectProd = db.products[prodId];
-        let oneProduct=incertElement('div', 'oneProduct', productList);
-        incertImg('img','', conectProd.img,oneProduct).id=conectProd.id;
-        let textDiv=incertElement('div', '', oneProduct);
-        let productName=incertElement('p', 'productName', textDiv);
+        let oneProduct=insertElement('div', 'oneProduct', productList);
+        insertImg('img','', conectProd.img,oneProduct).id=conectProd.id;
+        let textDiv=insertElement('div', '', oneProduct);
+        let productName=insertElement('p', 'productName', textDiv);
         productName.innerHTML=conectProd.productName;
         productName.id=conectProd.id;
-        incertElement('p', 'productComponents', textDiv).innerHTML=conectProd.components;
-        incertElement('p', 'price', textDiv).innerHTML=conectProd.price+' грн';
-        let acBtn = incertElementDetails('input', 'order', 'button', oneProduct)
+        insertElement('p', 'productComponents', textDiv).innerHTML=conectProd.components;
+        insertElement('p', 'price', textDiv).innerHTML=conectProd.price+' грн';
+        let acBtn = insertElementDetails('input', 'order', 'button', oneProduct)
         acBtn.value = 'До корзини';
     }
 }
@@ -198,57 +198,57 @@ function repaintDot(parent) {
 }
 
 function orderFull(container){
-    let option=["Hомер Телефону *", "Емейл", "ПІБ", "Адреса *", "Дата доставки *", "Варіант оплати"];
-    let area=incertElement('div', 'area', container);
+    let option=["Hомер телефону *", "Email", "ПІБ", "Адреса *", "Дата доставки *", "Варіант оплати"];
+    let area=insertElement('div', 'area', container);
     for (let i=0; i<option.length; i++){
-        let functionName=incertElement('p', 'functionName', area)
+        let functionName=insertElement('p', 'functionName', area)
         functionName.innerHTML=option[i];
         functionName.id=i+'name';
-        incertElement('textarea', 'functionInput', area).id=i+'text';
+        insertElement('textarea', 'functionInput', area).id=i+'text';
     }
-    let shopBasket=incertElement('div', 'shopBasket', container);
-    let priceAll=incertElement('p', 'priceAll', shopBasket);
-    let price=document.getElementById("priceAll").innerHTML;
+    let shopBasket=insertElement('div', 'shopBasket', container);
+    let priceAll=insertElement('p', 'priceAll', shopBasket);
+    let price = document.getElementById("priceAll").innerHTML;
     priceAll.innerHTML='Загальна вартість: '+price+'грн';
-    let PutOrder = incertElementDetails('input', 'PutOrder', 'button', container)
+    let PutOrder = insertElementDetails('input', 'PutOrder', 'button', container)
     PutOrder.value = "Оформити замовлення";
 }
 
 function basketFull(container, db, order){
-    incertElement('div', 'orderBtn', container).innerHTML='Замовити';
-    let bayAll=incertElement('div', 'bayAll', container);
-    incertElement('h2', 'conected', bayAll).innerHTML='Обрані вами продукти';
-    let shopBasket=incertElement('div', 'shopBasket', bayAll);
-    let priceAll=incertElement('p', '', shopBasket);
+    insertElement('div', 'orderBtn', container).innerHTML='Замовити';
+    let bayAll=insertElement('div', 'bayAll', container);
+    insertElement('h2', 'conected', bayAll).innerHTML='Кошик';
+    let shopBasket=insertElement('div', 'shopBasket', bayAll);
+    let priceAll=insertElement('p', '', shopBasket);
     priceAll.id='priceAll';
     priceAll.innerHTML='Загальна вартість: '+0+'грн';
-    let productList = incertElement('div', 'productList', bayAll);
+    let productList = insertElement('div', 'productList', bayAll);
     for (let i=0; i<order.length; i+=2){
         let myProd = db.products[order[i]];
-        let oneProduct=incertElement('div', 'oneProduct', productList);
-        incertImg('img','', myProd.img,oneProduct).id=myProd.id;
-        incertElement('p', 'counterOrdered', oneProduct).innerHTML=order[i+1];
-        let textDiv=incertElement('div', '', oneProduct);
-        let productName = incertElement('p', 'productName', textDiv)
+        let oneProduct=insertElement('div', 'oneProduct', productList);
+        insertImg('img','', myProd.img,oneProduct).id=myProd.id;
+        insertElement('p', 'counterOrdered', oneProduct).innerHTML=order[i+1];
+        let textDiv = insertElement('div', '', oneProduct);
+        let productName = insertElement('p', 'productName', textDiv)
         productName.innerHTML=myProd.productName;
         productName.id=myProd.id;
-        incertElement('p', 'productComponents', textDiv).innerHTML=myProd.components;
-        incertElement('p', 'price', textDiv).innerHTML=myProd.price+' грн';
-        let acBtn = incertElementDetails('input', 'order', 'button', oneProduct)
+        insertElement('p', 'productComponents', textDiv).innerHTML=myProd.components;
+        insertElement('p', 'price', textDiv).innerHTML=myProd.price+' грн';
+        let acBtn = insertElementDetails('input', 'order', 'button', oneProduct)
         acBtn.value = 'Додати ще одиницю';
-        let delBtn = incertElementDetails('input', 'unorder', 'button', oneProduct)
+        let delBtn = insertElementDetails('input', 'unorder', 'button', oneProduct)
         delBtn.value = 'Вилучити одиницю';
     }
 }
 
-function incertElement(type, elClassName, parent)
+function insertElement(type, elClassName, parent)
 {
     let newEl = document.createElement(type);
     newEl.className = elClassName;
     parent.appendChild(newEl);
     return newEl;
 }
-function incertElementDetails(type, elClassName, typeOf, parent)
+function insertElementDetails(type, elClassName, typeOf, parent)
 {
     let newEl = document.createElement(type);
     newEl.className = elClassName;
@@ -256,7 +256,7 @@ function incertElementDetails(type, elClassName, typeOf, parent)
     parent.appendChild(newEl);
     return newEl;
 }
-function incertImg(type, elClassName, src, parent)
+function insertImg(type, elClassName, src, parent)
 {
     let newEl = document.createElement(type);
     newEl.className = elClassName;
@@ -264,7 +264,7 @@ function incertImg(type, elClassName, src, parent)
     parent.appendChild(newEl);
     return newEl;
 }
-function incertElementInPlace(type, elClassName, parent, place)
+function insertElementInPlace(type, elClassName, parent, place)
 {
     let newEl = document.createElement(type);
     newEl.className = elClassName;
@@ -280,6 +280,6 @@ function onReady(callback) {
     }, 800);
 }
 export{indexFull, catalogFull,catalogOneFull,actionOneFull,
-    oneProductFull,basketFull, incertElementInPlace,incertImg,
-    incertElementDetails,incertElement,onReady,banerstep,orderFull
+    oneProductFull,basketFull, insertElementInPlace,insertImg,
+    insertElementDetails,insertElement,onReady,banerstep,orderFull
     ,moveImg};
