@@ -271,7 +271,7 @@ window.onload = async function (){
     }
 
     let screan = document.getElementsByClassName('container');
-    if (screan.length>0) screan[0].remove();
+    if (screan.length > 0) screan[0].remove();
     let container = incertElementInPlace('div', 'container', upMenu, 'afterend');
     document.getElementsByClassName('container')[0].style.display='none';
     scRender = new screanRender(container, db1, window.location.hash.split("/"));

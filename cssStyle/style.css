@@ -1,6 +1,6 @@
-hyml, body{
+body{
     width: 100%;
-    background-color: #081e24;
+    background-color: darkred;
     padding: 0;
     margin:0;
     overflow-x: hidden;
@@ -9,7 +9,7 @@ hyml, body{
 }
 ::-webkit-scrollbar {
     width: 10px;
-    background-color: #081e24;
+    background-color: darkred;
 }
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(#081e24, #1b6e68, #081e24);
@@ -37,7 +37,7 @@ hyml, body{
     z-index: 1023;
     color:#e29467;
     border: 5px double #e29467;
-    background-color: #1b6e68;
+    background-color: red;
     text-align: center;
     font-size: 10vmin;
     padding-top: 5vmin;
@@ -83,7 +83,7 @@ dee3e9 - сірий білий
     max-width: 100%;
     margin: 0;
     padding-top: calc(3.05vh - 20px);
-    background-color: #1b6e68;
+    background-color: red;
     display: flex;
     flex-direction: row;
     min-height: max-content;
@@ -96,9 +96,9 @@ dee3e9 - сірий білий
     color:#e29467;
     font-size: 3.5vmin;
     font-family: 'Pangolin', cursive;
-    cursor: default;
     text-shadow: 3px 3px 3px  #081e24;
     text-decoration: none;
+    cursor: pointer;
 }
 .menuA{
     flex: 1;
@@ -109,7 +109,7 @@ dee3e9 - сірий білий
     text-align: center;
     border-radius: 0.5vh;
     transform: skew(-10deg, 0deg);
-    background-color:#72bf9e;
+    background-color: darkred;
     box-shadow: 4px 4px 10px 0.5px #081e24;
     text-decoration: none;
     font-family: 'Pangolin', cursive;
@@ -149,7 +149,7 @@ dee3e9 - сірий білий
     right: -5%;
     width: 100%;
     transform: skew(10deg, 0deg);
-    background-color: #1b6e68;
+    background-color: red;
     z-index: 1000;
     display: none;
     overflow-y: scroll;
@@ -161,7 +161,7 @@ dee3e9 - сірий білий
     height: max-content;
     padding-top: 0.5vmax;
     font-size: 2vmax;
-    background-color: #1b6e6800;
+    background-color: red;
     animation: apear2 0.5s;
     font-family: 'Comfortaa', cursive;
     color: #081e24;
@@ -175,7 +175,7 @@ dee3e9 - сірий білий
     min-width: max-content;
     height: calc(2.5vh + 20px);
     margin: 10px;
-    background-color: #72bf9e;
+    background-color: darkred;
     transform: skew(-10deg, 0deg);
     position: relative;
     border-radius: 0.5vh;
@@ -217,8 +217,8 @@ dee3e9 - сірий білий
 .actionSlide{
     width: 100%;
     margin-top: 10px;
-    background-color: #081e24;
-}
+    background-color: darkred;
+    }
 .allAction{
     width: 100%;
     height: 50vmin;
@@ -261,7 +261,7 @@ dee3e9 - сірий білий
     transform: skew(-20deg, 0deg);
     top: 20px;
     right: -20px;
-    background-color: #72bf9e;
+    background-color: red;
     outline: none;
     border: none;
     font-size: 3vmin;
@@ -272,24 +272,24 @@ dee3e9 - сірий білий
     font-family: 'Caveat', cursive;
 }
 .action:hover{
-    background-color: #e29467;
+    background-color: red;
     color:   #1b6e68;
 }
 .number{
-    height:  1.5vmax;
-    width:  1.5vmax;
+    height:  2vh;
+    width:  2vh;
     margin-top: 0.25vmax;
     margin-left: calc(50% - 0.75vmax);
-    border-radius: 1.5vmax;
+    border-radius: 1.5vh;
     text-align: center;
-    background-color: #72bf9e;
-    border:0.5vmax solid #1b6e68;
+    background-color: darkred;
+    border:0.5vh solid #1b6e68;
 }
 /* Поле рекомендованих */
 .recomendHit{
     padding: 10px;
     width: calc(100% - 20px);
-    background-color:  #1b6e68;
+    background-color:  darkred;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap:10px;
@@ -300,7 +300,7 @@ dee3e9 - сірий білий
     margin:0;
     margin-top: 10px;
     padding: 2vmin 3vmin;
-    background-color: #1b6e68;
+    background-color: darkred;
     color:#e29467;
     font-family: 'Pangolin', cursive;
 }
@@ -362,7 +362,7 @@ dee3e9 - сірий білий
     left: 30px;
     transform: skew(-10deg, 0deg);
     font-style: italic ;
-    background-color: #72bf9e;
+    background-color: red;
     outline: none;
     border: none;
     font-size: 2.2vmax;
@@ -399,14 +399,14 @@ footer{
     width: 100%;
     margin:0;
     padding:10px;
-    background-color: #081e24;
+    background-color: darkred;
     position: relative;
 }
 .ctegoryName, .conected{
     text-align: center;
     width: max-content;
     padding:10px;
-    background-color: #1b6e68;
+    background-color: red;
     color: #e29467;
     border-radius: 1vmin;
     font-style: italic;
@@ -441,10 +441,10 @@ footer{
     grid-template-columns: repeat(3, 1fr);
     overflow: hidden;
     box-shadow: 4px 4px 10px 1px #081e24;
-    background-color: #72bf9e;
+    background-color: red;
 }
 .aboutProduct{
-    background-color: #1b6e68;
+    background-color: red;
     height: max-content;
     min-height: 41vmax;
     margin:0;
@@ -472,7 +472,7 @@ footer{
 }
 /*Action*/
 .aboutAct{
-    background-color: #1b6e68;
+    background-color: red;
     height: max-content;
     text-align: center;
     margin:0;
@@ -486,7 +486,7 @@ footer{
     box-shadow: 4px 4px 10px 1px #081e24;
 }
 .oneActionDescription{
-    background-color: #72bf9e;
+    background-color: red;
     text-align: left;
     padding:10px;
     padding-left: 4vmax;
@@ -503,7 +503,7 @@ footer{
     overflow-wrap: break-word;
     font-family: 'Comfortaa', cursive;
     font-style: italic;
-    background-color: #081e24;
+    background-color: darkred;
     padding:10px;
     color:#72bf9e;
     border-radius: 1vmin;
@@ -519,7 +519,7 @@ footer{
     margin:0;
     top: -10px;
     right: -5px;
-    background-color: #72bf9e;
+    background-color: red;
     outline: none;
     border: none;
     font-size: 2.2vmax;
@@ -570,7 +570,7 @@ footer{
     font-size:2.4vmax;
     font-family: 'Caveat', cursive;
     transform: skew(-10deg, 0deg);
-    background-color: #72bf9e;
+    background-color: red;
     border-radius: 0.5vmin;
     box-shadow: 4px 4px 10px #081e24;
     height: max-content;

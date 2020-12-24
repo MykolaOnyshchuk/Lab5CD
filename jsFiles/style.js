@@ -44,7 +44,7 @@ function catalogFull(container, db){
         ctegoryName.innerHTML=db.category[i].name;
         let productList = incertElement('div', 'productList', catalog);
         for (let q=0; q<db.products.length; q++){
-            if (db.products[q].categoryId==db.category[i].id){
+            if (db.products[q].categoryId === db.category[i].id){
                 let oneProduct=incertElement('div', 'oneProduct', productList);
                 incertImg('img','', db.products[q].images[0],oneProduct).id=db.products[q].id;
                 let textDiv=incertElement('div', '', oneProduct);
@@ -57,7 +57,7 @@ function catalogFull(container, db){
                 acBtn.value = 'До корзини';
             }
         }
-        if (productList.childNodes.length==0){
+        if (productList.childNodes.length === 0){
             ctegoryName.remove();
             productList.remove();
         }
@@ -70,7 +70,7 @@ function catalogOneFull(container, db, hashId){
     ctegoryName.innerHTML=db.category[hashId].name;
     let productList = incertElement('div', 'productList', catalog);
     for (let q=0; q<db.products.length; q++){
-        if (db.products[q].categoryId==db.category[hashId].id){
+        if (db.products[q].categoryId === db.category[hashId].id){
             let oneProduct=incertElement('div', 'oneProduct', productList);
             incertImg('img','', db.products[q].images[0],oneProduct).id=db.products[q].id;
             let textDiv=incertElement('div', '', oneProduct);
@@ -83,7 +83,7 @@ function catalogOneFull(container, db, hashId){
             acBtn.value = 'До корзини';
         }
     }
-    if (productList.childNodes.length==0){
+    if (productList.childNodes.length === 0){
         ctegoryName.remove();
         productList.remove();
     }
@@ -137,7 +137,7 @@ function oneProductFull(container, db, hashId){
     }
 }
 
-let start=null;
+let start = null;
 function banerstep(currentTime) {
     if (!start) start =currentTime;
     var process=currentTime-start;
@@ -161,7 +161,7 @@ function moveImg(parent) {
         let tmpscroll=parent.scrollLeft;
         if(process>1000){process=1000}
         parent.scrollLeft=startScroll+parent.offsetWidth*(process/1000);
-        if(parent.scrollLeft==tmpscroll && !firstmove)
+        if(parent.scrollLeft === tmpscroll && !firstmove)
         {
             window.requestAnimationFrame(sliderDown);
         }
@@ -192,7 +192,7 @@ function repaintDot(parent) {
             dots[q].style.backgroundColor="#72bf9e"
         dots[number+1].style.backgroundColor="#e29467"
     }
-    if(number==dots.length-1){
+    if(number === dots.length-1){
         for(let q=0; q<dots.length;q++)
             dots[q].style.backgroundColor="#72bf9e"
         dots[0].style.backgroundColor="#e29467"
