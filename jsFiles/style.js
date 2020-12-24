@@ -92,7 +92,7 @@ function catalogOneFull(container, db, hashId){
 function actionOneFull(container, db, hashId){
     let aboutAct = incertElement('div', 'aboutAct', container);
     incertElement('p', 'oneActionName', aboutAct).innerHTML=db.Action[hashId].name;
-    incertElement('p', 'actionTime', aboutAct).innerHTML='Діє до: '+db.Action[hashId].actionTime;
+    incertElement('p', 'actionTime', aboutAct).innerHTML='Опубліковано: '+db.Action[hashId].datePosted;
     incertImg('img', 'oneACtionImg', db.Action[hashId].image,aboutAct);
     incertElement('p', 'oneActionDescription', aboutAct).innerHTML=db.Action[hashId].about;
 }
