@@ -101,7 +101,6 @@ function oneProductFull(container, db, hashId){
     let aboutProduct = insertElement('div', 'aboutProduct', container);
     let allProdImg = insertElement('div', 'allProdImg', aboutProduct);
     insertImg('img', 'productImg', db.products[hashId].img,allProdImg).id=db.products[hashId].id;
-    //insertElementDetails('input', 'productImgHelp', 'textarea', allProdImg)
     insertElement('p', 'oneProductName', aboutProduct).innerHTML=db.products[hashId].productName;
     let onePrice = insertElement('p', 'price', aboutProduct);
     onePrice.innerHTML='ціна: '+db.products[hashId].price+' грн';
@@ -116,7 +115,7 @@ function oneProductFull(container, db, hashId){
     insertElement('p', 'oneProductPromo', aboutProduct).innerHTML=db.products[hashId].productDesk;
 
     let conectedAll = insertElement('div', 'conectedAll', container);
-    insertElement('h2', 'conected', conectedAll).innerHTML="Зв'язані продукти";
+    insertElement('h2', 'conected', conectedAll).innerHTML="Пов'язані продукти";
     let myProduct=db.products[hashId];
     let productList = insertElement('div', 'productList', conectedAll);
     for (let i=0; i<myProduct.similar.length; i++){

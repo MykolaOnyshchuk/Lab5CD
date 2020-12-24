@@ -49,12 +49,7 @@ body{
         transform: rotate(0turn);
     }
 }
-/*e29467 - оранжевий
-dee3e9 - сірий білий
-72bf9e - світло берюза
-1b6e68 - темно берюза
-081e24 - темно синій*/
-/* Верхнє меню і його фічі */
+
 .upperMenu{
     max-width: 100%;
     margin: 0;
@@ -186,7 +181,6 @@ menuA:hover {
 }
 
 
-/* Поле акцій */
 .actionSlide{
     width: 100%;
     margin-top: 10px;
@@ -206,7 +200,6 @@ menuA:hover {
     flex:1;
     width: 64vh;
     height:  50vh;
-    /* margin: 0 calc(50% - 32vh) ; */
     text-align: center;
     background-color: #081e2400;
     display: inline-block;
@@ -257,7 +250,6 @@ menuA:hover {
     text-align: center;
     background-color: darkred;
 }
-/* Поле рекомендованих */
 .recomendHit{
     padding: 10px;
     width: calc(100% - 20px);
@@ -287,13 +279,10 @@ menuA:hover {
 }
 .oneProduct > img{
     margin: 1vh;
-    /*height: 26vh;*/
     min-height: 11vw;
     max-height: 40vh;
     width: auto;
     max-width: 96%;
-    /*width: 55%;*/
-    /*flex:0.8;*/
     display: inline;
     border-radius: 0.5vh;
 }
@@ -346,7 +335,6 @@ menuA:hover {
     background-color: darkred;
     color:   white;
 }
-/* Футер і його наповнення */
 footer{
     display: flex;
     justify-content: space-between;
@@ -370,7 +358,6 @@ footer{
     line-height: 5vh;
 }
 
-/*Для каталогу всіх товарів*/
 .catalog{
     width: 100%;
     margin:0;
@@ -395,7 +382,6 @@ footer{
     grid-auto-rows: max-content;
 }
 
-/*сторінка одного продукта*/
 .allProdImg{
     border-radius: 1vh;
     margin:3vw;
@@ -436,7 +422,6 @@ footer{
     overflow-wrap: break-word;
     font-family: Bahnschrift, monospace;
 }
-/*Action*/
 .aboutAct{
     background-color: red;
     height: max-content;
@@ -473,7 +458,6 @@ footer{
     color: white;
     border-radius: 1vh;
 }
-/*Order page*/
 .unorder{
     top: calc(100% - 10vw);
 }
@@ -511,7 +495,6 @@ footer{
     cursor: pointer;
 }
 
-/*Сторінка оформлення замовлення*/
 .area{
     width:80vw;
     margin-left:calc(10vw - 3vw);
@@ -559,7 +542,6 @@ footer{
 .PutOrder:hover{
     background-color:  gray;
 }
-/*ДЛЯ ТЕЛЕФОНІВ*/
 @media  (max-width: 559px){
     .recomendHit{
         grid-template-columns: 1fr;
