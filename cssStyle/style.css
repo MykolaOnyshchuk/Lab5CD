@@ -329,7 +329,7 @@ menuA:hover {
 .order, .unorder{
     position:absolute;
     top: calc(100% - 5vw);
-    left: 30px;
+    left: 5px;
     background-color: indianred;
     outline: none;
     border: none;
@@ -548,12 +548,13 @@ footer{
     width: 40vw;
     font-family: Bahnschrift, monospace;
     margin: 20px auto auto 30vw;
-    transform: skew(10deg, 0deg);
     border-radius: 0.5vh;
-    background-color:  #dee3e969;
+    background-color:  black;
+    color: white;
+    bottom: 10vh;
 }
 .PutOrder:hover{
-    background-color:  #e294679f;
+    background-color:  gray;
 }
 /*ДЛЯ ТЕЛЕФОНІВ*/
 @media  (max-width: 559px){

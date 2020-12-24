@@ -57,10 +57,7 @@ class Order{
         this.mail=textArea[1].value;
         this.name=textArea[2].value;
         this.address=textArea[3].value;
-        if(textArea[4].value === 'сьогодні' || textArea[4].value === 'Сьогодні' )
-            this.date=new Date;
-        else
-            this.date=textArea[4].value;
+        this.date=textArea[4].value;
         if (textArea[5].value === "готівка" || textArea[5].value === "Готівка") this.variant=1;
         else this.variant=0;
         this.orderList=orderList;
@@ -96,19 +93,6 @@ function retouchText(target, text, textArea) {
         textArea[i].value=text;}
 }
 
-function isDate (str){
-    let arr=str.split('.')
-    let date;
-    if(arr.length<3){return false;}
-    try{
-        date = new Date (arr[2]+'-'+arr[1]+'-'+arr[0])
-        if (date === 'Invalid Date') {throw 'НЕ ТА ДАТА';}
-        if(date.getTime()<Date.now()){throw 'НЕ ТА ДАТА';}
-        return true;
-    }
-    catch(err){return false;}
-}
-
 function validation(textArea){
     let isValid=true;
     let phoneNumber=/^\+380\d{9}$/;
@@ -138,11 +122,6 @@ function validation(textArea){
         alert("Некоректно введена адреса");
         isValid=false;
         textArea[3].style.color="#e29467";
-    }
-    if (!((date.test(textArea[4].value) && isDate(textArea[4].value)) || textArea[4].value === 'Сьогодні' || textArea[4].value === 'cьогодні' ))
-    {alert("Некоректно введена дата");
-    isValid=false;
-    textArea[4].style.color="#e29467";
     }
     if (!variant.includes(textArea[5].value))
     {
