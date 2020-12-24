@@ -125,12 +125,13 @@ menuA:hover {
     background-color: red;
     z-index: 1000;
     display: none;
-    overflow-y: scroll;
+    overflow-y: hidden;
     border-radius: 1vh;
+    height: 40px;
 }
 .oneOpt{
     width: 100%;
-    height: max-content;
+    height: 50px;
     padding-top: 0.5vw;
     font-size: 2vw;
     background-color: red;
@@ -273,7 +274,7 @@ menuA:hover {
     font-family: Bahnschrift, monospace;
 }
 .oneProduct{
-    background-color: #dee3e9;
+    background-color: white;
     display: flex;
     flex-direction: column;
     position: relative;
