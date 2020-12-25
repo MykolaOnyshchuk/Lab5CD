@@ -147,7 +147,7 @@ async function pushOrder() {
         let oneOrder = new Order(textArea, order)
         let yourOrder = await postOrder(oneOrder)
         console.log(yourOrder)
-        baner.innerHTML = "Order #" + yourOrder.id;
+        baner.innerHTML = "Прийнято!";
         localStr.setItem("orders", JSON.stringify([]))
         order=[];
         refreshCounter();

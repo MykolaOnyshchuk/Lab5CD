@@ -25,21 +25,20 @@ body{
 }
 #resultBaner{
     position: absolute;
-    width: 40vh;
-    height:20vh;
+    width: 35vh;
+    height:7vh;
     max-height: max-content;
     top: calc(50vh - 10vh);
     left: calc(50vw - 20vh);
     border-radius: 1vh;
     z-index: 1023;
-    color:#e29467;
-    border: 5px double #e29467;
     background-color: red;
     text-align: center;
-    font-size: 10vh;
+    font-size: 5vh;
     padding-top: 5vh;
     display: none;
-    box-shadow: inset 0px 0px 10px 0.5px #081e24;
+    color: white;
+    font-family: Bahnschrift, monospace;
 }
 @keyframes loader{
     from {
