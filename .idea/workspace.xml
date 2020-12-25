@@ -59,7 +59,7 @@
       <workItem from="1608673847794" duration="2353000" />
       <workItem from="1608712436015" duration="47000" />
       <workItem from="1608735186770" duration="46000" />
-      <workItem from="1608736048989" duration="56136000" />
+      <workItem from="1608736048989" duration="56488000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <created>1608678310736</created>
@@ -285,7 +285,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608912862662</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Pre-final commit">
+      <created>1608913011777</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1608913011777</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,9 +330,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1608794058170" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1608912867686">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1608913017345">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1608912867686" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1608913017345" />
   </component>
 </project>

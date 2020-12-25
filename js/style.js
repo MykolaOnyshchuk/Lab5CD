@@ -188,11 +188,11 @@ function repaintDot(parent) {
     if(number < dots.length - 1){
         for(let q = 0; q < dots.length;q++)
             dots[q].style.backgroundColor = "white";
-        dots[number + 1].style.backgroundColor = "white";
+        dots[number + 1].style.backgroundColor = "gray";
     }
     if(number === dots.length - 1){
         for(let q = 0; q < dots.length; q++)
-            dots[q].style.backgroundColor = "darkgray";
+            dots[q].style.backgroundColor = "white";
         dots[0].style.backgroundColor = "gray";
     }
 }
