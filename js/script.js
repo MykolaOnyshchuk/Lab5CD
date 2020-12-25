@@ -188,15 +188,15 @@ window.addEventListener('mouseout', (event)=>{
 
 function addToOrder(target){
     let id = target.parentElement.firstChild.id;
-    let baner=document.getElementById("resultBaner");
+    let baner = document.getElementById("resultBaner");
     for (let i=0; i<order.length; i+=2){
         if (order[i] === id){
             order[i+1]++;
             if (target.parentElement.childNodes[1].className === 'counterOrdered')
                 target.parentElement.childNodes[1].innerHTML=order[i+1];
-            localStr.setItem("orders", JSON.stringify( order));
-            baner.style.display='block'
-            baner.style.top='calc(50vh - 10vh + ' + window.scrollY + 'px)'
+            localStr.setItem("orders", JSON.stringify(order));
+            baner.style.display = 'block'
+            baner.style.top = 'calc(50vh - 10vh + ' + window.scrollY + 'px)'
             window.requestAnimationFrame(banerstep);
             setTimeout(function del2(){baner.style.display = 'none'}, 1000);
             refreshCounter();
@@ -206,10 +206,10 @@ function addToOrder(target){
     order.push(id);
     order.push(1);
     baner.style.display = 'block'
-    baner.style.top='calc(50vh - 10vh + '+ window.scrollY +'px)'
+    baner.style.top = 'calc(50vh - 10vh + ' + window.scrollY + 'px)'
     window.requestAnimationFrame(banerstep);
     setTimeout(function del2(){baner.style.display='none'}, 1000);
-    localStr.setItem("orders",  JSON.stringify( order));
+    localStr.setItem("orders", JSON.stringify( order));
     if (window.location.hash === '#basketPage')
         basketFull(scRender.container, scRender.db, order);
     refreshCounter();
@@ -234,7 +234,7 @@ function deleteFromOrder(target){
                 return;
             }
             else {
-                target.parentElement.childNodes[1].innerHTML=order[i+1];
+                target.parentElement.childNodes[1].innerHTML = order[i+1];
                 localStr.setItem("orders", JSON.stringify( order));
                 refreshCounter();
             }
