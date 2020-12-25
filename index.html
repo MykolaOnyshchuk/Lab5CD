@@ -9,28 +9,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Comfortaa&family=Pangolin&display=swap" rel="stylesheet">
 </head>
 <body class='body' id='body'>
-<div class='upperMenu' id='upperMenu'>
-    <a class='logo' href="index.html">
-        <img src="img/Pizzione_logo.png" class="logoImg">
-    </a>
-    <a class='menuA' href="index.html#catalog">Каталог</a>
-    <div class='menuA'>Категорії
-        <div class = 'catOpt'>
+<div class="wrap">
+    <div class='upperMenu' id='upperMenu'>
+        <a class='logo' href="index.html">
+            <img src="img/Pizzione_logo.png" class="logoImg">
+        </a>
+        <a class='menuA' href="index.html#catalog">Каталог</a>
+        <div class='menuA'>
+            <div class = 'catOpt'>
+            </div>
+        </div>
+        <div class = 'shopBasket'>
+            <div id = 'shopCounter' class='shopCounter'>-</div>
+            <p id='priceAll' class='priceAll'>Корзина</p>
         </div>
     </div>
-    <div class = 'shopBasket'>
-        <div id = 'shopCounter' class='shopCounter'>-</div>
-        <p id='priceAll' class='priceAll'>Корзина</p>
+    <div id = 'resultBaner'>Додано</div>
+    <div id='loading'></div>
+    <script type="module" src='js/main.js'></script>
+    <script type="module" src='js/style.js'></script>
+    <script type="module" src='js/rout.js'></script>
     </div>
-</div>
-<div id = 'resultBaner'>Додано</div>
-<div id='loading'></div>
-<script type="module" src='js/main.js'></script>
-<script type="module" src='js/style.js'></script>
-<script type="module" src='js/rout.js'></script>
-<footer class='footer'>
-    <div class="footerDiv"><a class="footerA">Про нас</a><br/><br/><br/><a class="footerA">Історія Pizzione</a></div>
-    <div class="footerDiv"><a class="footerA">Найсмачніша піца</a><br/><br/><br/><a class="footerA">Рецерти</a></div>
-    <div class="footerDiv"><a class="footerA">Контакти</a><br/><br/><br/><a class="footerA">Благодійність</a></div>
-</footer>
+    <footer class='footer'>
+        <div class="footerDiv"><a class="footerA">Про нас</a><br/><br/><br/><a class="footerA">Історія Pizzione</a></div>
+        <div class="footerDiv"><a class="footerA">Найсмачніша піца</a><br/><br/><br/><a class="footerA">Рецерти</a></div>
+        <div class="footerDiv"><a class="footerA">Контакти</a><br/><br/><br/><a class="footerA">Благодійність</a></div>
+    </footer>
 </body>

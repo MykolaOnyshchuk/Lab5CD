@@ -1,13 +1,16 @@
 
 body{
-    hight: 100%;
+    margin-top: 70px;
+    margin-bottom: 0;
+    height: 100%;
     width: 100%;
     background-color: darkred;
     padding: 0;
-    margin:0;
+    /*margin:0;*/
     overflow-x: hidden;
     overflow-y: scroll;
     position: relative;
+    left: -1px;
 }
 
 #loading{
@@ -51,13 +54,17 @@ body{
 }
 
 .upperMenu{
-    max-width: 100%;
+    width: 100%;
     margin: 0;
     padding-top: calc(3.05vh - 20px);
     background-color: red;
     display: flex;
     flex-direction: row;
     min-height: max-content;
+    position: fixed;
+    top: 0;
+    left: -1px;
+    z-index: 2000;
 }
 .logo{
     flex: 0.5;
@@ -72,7 +79,7 @@ body{
 }
 .menuA{
     flex: 1;
-    height: 2.5vh;
+    /*height: 2.5vh;*/
     min-height: 10px;
     margin: 10px;
     padding: 10px;
@@ -89,11 +96,11 @@ menuA:hover {
     background-color: darkred;
 }
 
-.menuA:hover >.catOpt{
+/*.menuA:hover >.catOpt{
     display: block;
     height: 30vh;
     animation: apear 0.7s;
-}
+}*/
 @keyframes apear{
     from {
         height: 0px;
@@ -115,26 +122,27 @@ menuA:hover {
     }
 }
 .catOpt{
+    display: flex;
+    flex-direction: row;
     position: absolute;
-    top: 100%;
-    right: -5%;
+    top: 0;
+    right: 38%;
     width: 100%;
     background-color: red;
     z-index: 1000;
-    display: none;
     overflow-y: hidden;
-    border-radius: 1vh;
-    height: 40px;
+    /*border-radius: 1vh;*/
+    /*height: 40px;*/
 }
 .oneOpt{
     width: 100%;
-    height: 50px;
-    padding-top: 0.5vw;
-    font-size: 2vw;
+    /*height: 50px;*/
+    /*padding-top: 0.5vw;*/
+    /*font-size: 2vw;*/
     background-color: red;
     animation: apear2 0.5s;
     font-family: Bahnschrift, monospace;
-    color: #081e24;
+    color: white;
     cursor: pointer;
 }
 .oneOpt:hover{
@@ -158,9 +166,9 @@ menuA:hover {
     width: calc(2.4vh + 10px);
     min-height: 20px;
     min-width: 20px;
-    font-size: 1.8vh;
+    font-size: 3vh;
     border-radius: 2vw;
-    background-color: #e29467;
+    background-color: forestgreen;
     text-align: center;
     background-image: url('/img/shopping-cart.png');
     background-size: 2vh 2vh;
@@ -224,7 +232,6 @@ menuA:hover {
 }
 .action{
     position: absolute;
-    transform: skew(-20deg, 0deg);
     top: 20px;
     right: -20px;
     background-color: red;
@@ -248,7 +255,7 @@ menuA:hover {
     margin-left: calc(50% - 0.75vw);
     border-radius: 1.5vh;
     text-align: center;
-    background-color: darkred;
+    background-color: white;
 }
 .recomendHit{
     padding: 10px;
@@ -338,13 +345,14 @@ menuA:hover {
 footer{
     display: flex;
     justify-content: space-between;
-    bottom: 0;
+    bottom: 0px;
     width: 100%;
     height: max-content;
     background-color: #081e24;
     padding: 10px;
     color: white;
     font-family: Bahnschrift, monospace;
+    left: -7px;
 }
 
 .footerDiv {
@@ -444,7 +452,7 @@ footer{
     border-radius: 1vh;
 }
 .conectedAll, .bayAll{
-    padding:2vw;
+    padding: 2vw;
 }
 .actionTime{
     font-size: 2vw;
@@ -590,4 +598,8 @@ footer{
 
 .oneProduct img {
 
+}
+
+.wrap {
+    min-height: 77.7vh;
 }

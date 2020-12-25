@@ -104,15 +104,16 @@ function oneProductFull(container, db, hashId){
     insertElement('p', 'oneProductName', aboutProduct).innerHTML=db.products[hashId].productName;
     let onePrice = insertElement('p', 'price', aboutProduct);
     onePrice.innerHTML='ціна: '+db.products[hashId].price+' грн';
-    onePrice.style.fontSize='2.5vmax';
-    onePrice.style.color='#72bf9e'
+    onePrice.style.fontSize='2.5vw';
+    onePrice.style.color='white';
+    onePrice.style.top = '30vh';
+    onePrice.style.left = '-2.5vw';
     let acBtn = insertElementDetails('input', 'order', 'button', allProdImg)
     acBtn.value = 'До корзини';
-    acBtn.style.top='12vmax';
-    acBtn.style.left='33vmax';
-    acBtn.style.backgroundColor='#dee3e9';
+    acBtn.style.top='28vw';
+    acBtn.style.left='40vw';
+    acBtn.style.backgroundColor='indianred';
     insertElement('p', 'oneProductDescription', aboutProduct).innerHTML=db.products[hashId].components;
-    insertElement('p', 'oneProductPromo', aboutProduct).innerHTML=db.products[hashId].productDesk;
 
     let conectedAll = insertElement('div', 'conectedAll', container);
     insertElement('h2', 'conected', conectedAll).innerHTML="Пов'язані продукти";
@@ -154,24 +155,24 @@ function moveImg(parent) {
     let firstmove=true;
     function sliderUp(currentTime) {
         if (!infinitystart) infinitystart = currentTime;
-        let process=currentTime-infinitystart;
-        let tmpscroll=parent.scrollLeft;
+        let process = currentTime-infinitystart;
+        let tmpscroll = parent.scrollLeft;
         if(process>1000){process=1000}
-        parent.scrollLeft=startScroll+parent.offsetWidth*(process/1000);
+        parent.scrollLeft = startScroll + parent.offsetWidth*(process/1000);
         if(parent.scrollLeft === tmpscroll && !firstmove)
         {
             window.requestAnimationFrame(sliderDown);
         }
         else if (process < 1000) {
-            firstmove=false;
+            firstmove = false;
             window.requestAnimationFrame(sliderUp);
         }
     }
     function sliderDown(currentTime) {
         if (!infinityend) infinityend = currentTime;
-        let process=currentTime-infinityend;
-        if(process>1000){process=1000}
-        parent.scrollLeft=startScroll*(1-process/1000);
+        let process = currentTime - infinityend;
+        if(process > 1000){process = 1000}
+        parent.scrollLeft = startScroll*(1-process/1000);
         if (process < 1000) {
             window.requestAnimationFrame(sliderDown);
         }
@@ -181,56 +182,63 @@ function moveImg(parent) {
 }
 
 function repaintDot(parent) {
-    let dots=document.getElementsByClassName('number');
-    if(dots.length<1){return;}
-    let number =Math.round( parent.scrollLeft/parent.offsetWidth);
-    if(number<dots.length-1){
-        for(let q=0; q<dots.length;q++)
-            dots[q].style.backgroundColor="#72bf9e"
-        dots[number+1].style.backgroundColor="#e29467"
+    let dots = document.getElementsByClassName('number');
+    if(dots.length < 1){return;}
+    let number = Math.round(parent.scrollLeft/parent.offsetWidth);
+    if(number < dots.length - 1){
+        for(let q = 0; q < dots.length;q++)
+            dots[q].style.backgroundColor = "white";
+        dots[number + 1].style.backgroundColor = "white";
     }
-    if(number === dots.length-1){
-        for(let q=0; q<dots.length;q++)
-            dots[q].style.backgroundColor="#72bf9e"
-        dots[0].style.backgroundColor="#e29467"
+    if(number === dots.length - 1){
+        for(let q = 0; q < dots.length; q++)
+            dots[q].style.backgroundColor = "darkgray";
+        dots[0].style.backgroundColor = "gray";
     }
 }
 
 function orderFull(container){
-    let option=["Hомер телефону *", "Email", "ПІБ", "Адреса *", "Дата доставки *", "Варіант оплати"];
-    let area=insertElement('div', 'area', container);
-    for (let i=0; i<option.length; i++){
-        let functionName=insertElement('p', 'functionName', area)
-        functionName.innerHTML=option[i];
-        functionName.id=i+'name';
-        insertElement('textarea', 'functionInput', area).id=i+'text';
+    let option = ["Hомер телефону *", "Email", "ПІБ", "Адреса *", "Час доставки *", "Варіант оплати"];
+    let area = insertElement('div', 'area', container);
+    for (let i = 0; i < option.length; i++){
+        let functionName = insertElement('p', 'functionName', area)
+        functionName.innerHTML = option[i];
+        functionName.id = i + 'name';
+        insertElement('textarea', 'functionInput', area).id = i + 'text';
     }
-    let shopBasket=insertElement('div', 'shopBasket', container);
+    let shopBasket = insertElement('div', 'shopBasket', container);
     let PutOrder = insertElementDetails('input', 'PutOrder', 'button', container)
     PutOrder.value = "Оформити замовлення";
 }
 
 function basketFull(container, db, order){
-    insertElement('div', 'orderBtn', container).innerHTML='Замовити';
-    let bayAll=insertElement('div', 'bayAll', container);
-    insertElement('h2', 'conected', bayAll).innerHTML='Кошик';
-    let shopBasket=insertElement('div', 'shopBasket', bayAll);
+    insertElement('div', 'orderBtn', container).innerHTML = 'Замовити';
+    let bayAll = insertElement('div', 'bayAll', container);
+    insertElement('h2', 'conected', bayAll).innerHTML = 'Кошик';
+    let shopBasket = insertElement('div', 'shopBasket', bayAll);
     let productList = insertElement('div', 'productList', bayAll);
-    for (let i=0; i<order.length; i+=2){
+    for (let i = 0; i < order.length; i += 2){
         let myProd = db.products[order[i]];
-        let oneProduct=insertElement('div', 'oneProduct', productList);
+        let oneProduct = insertElement('div', 'oneProduct', productList);
+        oneProduct.style.height = '300px';
         insertImg('img','', myProd.img,oneProduct).id=myProd.id;
         insertElement('p', 'counterOrdered', oneProduct).innerHTML=order[i+1];
         let textDiv = insertElement('div', '', oneProduct);
         let productName = insertElement('p', 'productName', textDiv)
-        productName.innerHTML=myProd.productName;
-        productName.id=myProd.id;
-        insertElement('p', 'productComponents', textDiv).innerHTML=myProd.components;
-        insertElement('p', 'price', textDiv).innerHTML=myProd.price+' грн';
+        productName.innerHTML = myProd.productName;
+        productName.id = myProd.id;
+        insertElement('p', 'productComponents', textDiv).innerHTML = myProd.components;
+        insertElement('p', 'price', textDiv).innerHTML = myProd.price+' грн';
         let acBtn = insertElementDetails('input', 'order', 'button', oneProduct)
         acBtn.value = 'Додати ще одиницю';
+        acBtn.style.fontSize = '2.3vh';
+        acBtn.style.top = '57vh';
+        acBtn.style.left = '5.4vw';
         let delBtn = insertElementDetails('input', 'unorder', 'button', oneProduct)
         delBtn.value = 'Вилучити одиницю';
+        delBtn.style.fontSize = '2.3vh';
+        delBtn.style.left = '11.5vh';
+        delBtn.style.top = '52vh';
     }
 }
 
@@ -272,7 +280,5 @@ function onReady(callback) {
         }
     }, 800);
 }
-export{indexFull, catalogFull,catalogOneFull,actionOneFull,
-    oneProductFull,basketFull, insertElementInPlace,insertImg,
-    insertElementDetails,insertElement,onReady,banerstep,orderFull
-    ,moveImg};
+export{indexFull, catalogFull, catalogOneFull, actionOneFull, oneProductFull, basketFull, insertElementInPlace,
+    insertImg, insertElementDetails, insertElement, onReady, banerstep, orderFull, moveImg};

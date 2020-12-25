@@ -196,16 +196,16 @@ function addToOrder(target){
                 target.parentElement.childNodes[1].innerHTML=order[i+1];
             localStr.setItem("orders", JSON.stringify( order));
             baner.style.display='block'
-            baner.style.top='calc(50vh - 10vh + '+ window.scrollY +'px)'
+            baner.style.top='calc(50vh - 10vh + ' + window.scrollY + 'px)'
             window.requestAnimationFrame(banerstep);
-            setTimeout(function del2(){baner.style.display='none'}, 1000);
+            setTimeout(function del2(){baner.style.display = 'none'}, 1000);
             refreshCounter();
             return;
         }
     }
     order.push(id);
     order.push(1);
-    baner.style.display='block'
+    baner.style.display = 'block'
     baner.style.top='calc(50vh - 10vh + '+ window.scrollY +'px)'
     window.requestAnimationFrame(banerstep);
     setTimeout(function del2(){baner.style.display='none'}, 1000);
@@ -217,12 +217,12 @@ function addToOrder(target){
 
 function deleteFromOrder(target){
     let id = target.parentElement.firstChild.id;
-    for (let i=0; i<order.length; i+=2){
+    for (let i = 0; i < order.length; i += 2){
         if (order[i] === id){
-            order[i+1]--;
-            if (order[i+1]<1){
-                order.splice(i+1,1)
-                order.splice(i,1);
+            order[i + 1]--;
+            if (order[i + 1] < 1){
+                order.splice(i + 1, 1)
+                order.splice(i, 1);
                 let parent=target.parentElement;
                 parent.animate([
                     {opacity: '100%'},
@@ -245,17 +245,17 @@ function deleteFromOrder(target){
 function refreshCounter(){
     let counterProduct = document.getElementById("shopCounter");
     let shopBasket = document.getElementsByClassName("shopBasket");
-    if (shopBasket.length>1){shopBasket=shopBasket[1].firstChild}
-    let counter=0, price=0;
-    for (let q=0; q<order.length; q+=2){
-        counter+=order[q+1];
+    if (shopBasket.length > 1){shopBasket = shopBasket[1].firstChild}
+    let counter = 0, price = 0;
+    for (let q = 0; q < order.length; q += 2){
+        counter += order[q+1];
         price+=findPrice(order[q])*order[q+1];
     }
     counterProduct.innerHTML=counter;
 };
 
 function findPrice(id){
-    for(let q=0; q<scRender.db.products.length; q++){
+    for(let q = 0; q < scRender.db.products.length; q++){
         if (id === scRender.db.products[q].id){
             return scRender.db.products[q].price;
         }
@@ -267,9 +267,12 @@ window.onload = async function (){
     try{
         db1 = await fetchMyData()}
     catch (error) {
-        alert('помилка сервера: '+ error+ ". Спробуйте пізніше");
+        alert('помилка сервера: '+ error + ". Спробуйте пізніше");
     }
-    if (localStr.length === 0){localStr.setItem("orders",  JSON.stringify( order))}
+    if (localStr.length === 0)
+    {
+        localStr.setItem("orders",  JSON.stringify(order))
+    }
     else {
         let orderTmp=localStr.getItem("orders");
         order=JSON.parse(orderTmp);
@@ -280,11 +283,11 @@ window.onload = async function (){
     let container = insertElementInPlace('div', 'container', upMenu, 'afterend');
     document.getElementsByClassName('container')[0].style.display='none';
     scRender = new screenCreate(container, db1, window.location.hash.split("/"));
-    let catOpt=document.getElementsByClassName("catOpt")[0];
-    for(let w=0;w<scRender.db.category.length;w++){
-        let textDiv=insertElement('div', 'oneOpt', catOpt);
-        textDiv.innerHTML=scRender.db.category[w].name;
-        textDiv.id=scRender.db.category[w].id;
+    let catOpt = document.getElementsByClassName("catOpt")[0];
+    for(let w = 0;w < scRender.db.category.length; w++){
+        let textDiv = insertElement('div', 'oneOpt', catOpt);
+        textDiv.innerHTML = scRender.db.category[w].name;
+        textDiv.id = scRender.db.category[w].id;
     }
     refreshCounter();
     scRender.renderScreen();
