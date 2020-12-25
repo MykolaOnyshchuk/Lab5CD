@@ -1,42 +1,42 @@
-import {fetchMyData,postOrder} from './main.js'
+import {fetchMyData,postOrder} from './fetch.js'
 import {indexFull, catalogFull,catalogOneFull,actionOneFull,oneProductFull,basketFull, insertElementInPlace,
     insertElement,onReady,banerstep,orderFull, moveImg} from './style.js'
-const body=document.getElementById('body');
-const upMenu=document.getElementsByClassName('upperMenu')[0];
+const body = document.getElementById('body');
+const upMenu = document.getElementsByClassName('upperMenu')[0];
 let db1;
-let order=[];
-let localStr=window.localStorage;
+let order = [];
+let localStr = window.localStorage;
 let orderCase=['','','','','','']
 
 onReady(function() {
-    document.getElementById('loading').style.display='none'
-    document.getElementsByClassName('container')[0].style.display='block'
-    document.getElementsByClassName('footer')[0].style.display='flex'
+    document.getElementById('loading').style.display = 'none'
+    document.getElementsByClassName('container')[0].style.display = 'block'
+    document.getElementsByClassName('footer')[0].style.display = 'flex'
 });
 class screenCreate{
     constructor(container, db, siteUrl){
         this.container = container;
-        this.db=db;
-        this.siteUrl=siteUrl;
-        this.hashId=-1;
-        if (siteUrl.length>1) {this.hashId=parseInt(siteUrl[1])}
+        this.db = db;
+        this.siteUrl = siteUrl;
+        this.hashId = -1;
+        if (siteUrl.length > 1) {this.hashId = parseInt(siteUrl[1])}
     }
     renderScreen() {
         switch(this.siteUrl[0]){
             case '#catalog':{if(this.hashId !== -1){
-                if (this.hashId>=0 && this.hashId<this.db.category.length)
+                if (this.hashId >= 0 && this.hashId < this.db.category.length)
                     catalogOneFull(this.container, this.db, this.hashId);
                 else  window.location.hash = ''
             }
             else catalogFull(this.container, this.db);
                 break;
             }
-            case '#oneAction':{if (this.hashId>=0 && this.hashId < this.db.Action.length)
+            case '#oneAction':{if (this.hashId >= 0 && this.hashId < this.db.Action.length)
                 actionOneFull(this.container, this.db, this.hashId);
             else  window.location.hash = ''
                 break;
             }
-            case '#oneProductPage':{if (this.hashId>=0 && this.hashId<this.db.products.length)
+            case '#oneProductPage':{if (this.hashId >= 0 && this.hashId < this.db.products.length)
                 oneProductFull(this.container, this.db, this.hashId);
             else  window.location.hash = ''
                 break;
@@ -52,11 +52,11 @@ class screenCreate{
 }
 class Order{
     constructor(textArea, orderList){
-        this.phoneNumber=textArea[0].value;
-        this.mail=textArea[1].value;
-        this.name=textArea[2].value;
-        this.address=textArea[3].value;
-        this.date=textArea[4].value;
+        this.phoneNumber = textArea[0].value;
+        this.mail = textArea[1].value;
+        this.name = textArea[2].value;
+        this.address = textArea[3].value;
+        this.date = textArea[4].value;
         if (textArea[5].value === "готівка" || textArea[5].value === "Готівка") this.variant=1;
         else this.variant=0;
         this.orderList=orderList;
@@ -73,9 +73,9 @@ window.addEventListener('click', (event)=>{
         case 'oneOpt':{ window.location.hash = '#catalog/'+event.target.id; break;}
         case 'shopCounter':{ if (loc !== '#basketPage' && event.target.id !== '') window.location.hash = '#basketPage';  break;}
         case 'shopBasket':{ if (loc !== '#basketPage' && event.target.id !== '') window.location.hash = '#basketPage';  break;}
-        case 'productName':{ window.location.hash ='#oneProductPage/'+ event.target.id; break;}
-        case 'action':{ window.location.hash ='#oneAction/'+ event.target.id; break;}
-        case 'IMG':{  window.location.hash ='#oneProductPage/'+ event.target.id; break;}
+        case 'productName':{ window.location.hash = '#oneProductPage/' + event.target.id; break;}
+        case 'action':{ window.location.hash ='#oneAction/' + event.target.id; break;}
+        case 'IMG':{  window.location.hash ='#oneProductPage/' + event.target.id; break;}
         case 'order':{addToOrder(event.target);break;}
         case 'unorder':{deleteFromOrder(event.target);break;}
         case 'orderBtn':{if(order.length>0)window.location.hash ='#createOrder';break;}
@@ -102,59 +102,59 @@ function validation(textArea){
     if (!phoneNumber.test(textArea[0].value))
     {
         alert("Некоректно введений номер телефону");
-        isValid=false;textArea[0].style.color="#e29467";
+        isValid = false;textArea[0].style.color = "red";
     }
     if (!mail.test(textArea[1].value) && textArea[1].value !== '')
     {
         alert("Некоректно введений email");
-        isValid=false;
-        textArea[1].style.color="#e29467";
+        isValid = false;
+        textArea[1].style.color = "red";
     }
     if (!name.test(textArea[2].value) && textArea[2].value !== '')
     {
         alert("Некоректно введене ім'я");
-        isValid=false;
-        textArea[2].style.color="#e29467";
+        isValid = false;
+        textArea[2].style.color = "red";
     }
     if (!address.test(textArea[3].value)){
         alert("Некоректно введена адреса");
-        isValid=false;
-        textArea[3].style.color="#e29467";
+        isValid = false;
+        textArea[3].style.color = "red";
     }
     if (!variant.includes(textArea[5].value))
     {
         alert("Оплата неможлива");
-        isValid=false;
-        textArea[5].style.color="#e29467"
+        isValid = false;
+        textArea[5].style.color = "red"
     }
     for(let q=0;q<textArea.length;q++) {
-        textArea[q].oninput=function () {
-            textArea[q].style.color="#000000";
+        textArea[q].oninput = function () {
+            textArea[q].style.color = "#000000";
         }
         if(textArea[q].value === '')
         {
-            textArea[q].style.color="#000000";
+            textArea[q].style.color = "#000000";
         }
     }
     return isValid;
 }
 
 async function pushOrder() {
-    let textArea=document.getElementsByClassName("functionInput");
-    let isValid=validation(textArea);
-    let baner=document.getElementById("resultBaner");
+    let textArea = document.getElementsByClassName("functionInput");
+    let isValid = validation(textArea);
+    let baner = document.getElementById("resultBaner");
     if (isValid){
-        let oneOrder=new Order(textArea, order)
+        let oneOrder = new Order(textArea, order)
         let yourOrder = await postOrder(oneOrder)
         console.log(yourOrder)
-        baner.innerHTML="Order #"+yourOrder.id;
+        baner.innerHTML = "Order #" + yourOrder.id;
         localStr.setItem("orders", JSON.stringify([]))
         order=[];
         refreshCounter();
     }
-    else{baner.innerHTML="Помилка замовлення"}
-    baner.style.display='block'
-    baner.style.top='calc(50vh - 10vh + '+ window.scrollY +'px)'
+    else{baner.innerHTML = "Помилка замовлення"}
+    baner.style.display = 'block'
+    baner.style.top = 'calc(50vh - 10vh + '+ window.scrollY +'px)'
     window.requestAnimationFrame(banerstep);
     setTimeout(function del3(){ baner.style.display='none'; baner.innerHTML="Товар додано в корзину"}, 1000);
 }
