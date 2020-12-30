@@ -1,0 +1,40 @@
+{
+  "name": "your-application",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "webpack serve",
+    "dist": "webpack",
+    "lint": "eslint js",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MykolaOnyshchuk/Lab5CD.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MykolaOnyshchuk/Lab5CD/issues"
+  },
+  "browserslist": [
+    "> 0.25%, not dead"
+  ],
+  "homepage": "https://github.com/MykolaOnyshchuk/Lab5CD#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.12.7",
+    "babel-jest": "^26.6.3",
+    "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^6.4.1",
+    "css-loader": "^5.0.1",
+    "eslint": "^7.16.0",
+    "html-webpack-plugin": "^4.5.0",
+    "jest": "^26.6.3",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.0",
+    "webpack-dev-server": "^3.11.1"
+  }
+}
